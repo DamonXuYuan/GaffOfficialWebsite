@@ -11,7 +11,7 @@ const CompanyProfile: React.FC = () => {
       {/* 关于我们 */}
       <div className={styles.aboutSection}>
         <div className={styles.content}>
-          <div className={styles.title}>关于我们</div>
+          <div className={styles.title}>会社概要</div>
           <div className={styles.subTitle}>
             标语标语标语标语标语标语标语标语标语标语
           </div>

@@ -70,7 +70,7 @@ const GarySection: React.FC = () => {
                   <div className={styles.img}>
                     <img src={item.imgUrl} alt="" />
                   </div>
-                  <div className={styles.name}>{item.name}</div>
+                  {/* <div className={styles.name}>{item.name}</div> */}
                 </div>
               );
             })}
@@ -83,7 +83,7 @@ const GarySection: React.FC = () => {
                 <div className={styles.img}>
                   <img src={item.imgUrl} alt="" />
                 </div>
-                <div className={styles.name}>{item.name}</div>
+                {/* <div className={styles.name}>{item.name}</div> */}
               </div>
             ))}
           </div>
