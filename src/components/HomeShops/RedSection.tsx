@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import { Carousel } from "antd";
 import img from "@/assets/img/banner.png";
+import arrowIcon from "@/assets/img/arrowIcon.png";
+import nextIcon from "@/assets/img/nextIcon.png";
 interface Item {
   imgUrl: string;
   name: string;
@@ -53,6 +55,10 @@ const RedSection: React.FC = () => {
       imgUrl: img,
       name: "店铺11",
     },
+    {
+      imgUrl: img,
+      name: "店铺12",
+    },
   ]);
   const [newList, setNewList] = useState<any>([]);
 
@@ -72,7 +78,15 @@ const RedSection: React.FC = () => {
       <div className={styles.content}>
         <div className={styles.title}>店舗展示</div>
         <div className={styles.carouselSection}>
-          <Carousel arrows autoplay dots={false}>
+          <Carousel
+            arrows
+            autoplay
+            draggable
+            dots={false}
+            autoplaySpeed={5000}
+            prevArrow={<img src={arrowIcon} alt="arrow" />}
+            nextArrow={<img src={nextIcon} alt="next" />}
+          >
             {newList.map((item: any, index: number) => {
               return (
                 <div key={index} className={styles.carouselItem}>
