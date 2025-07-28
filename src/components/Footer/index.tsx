@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         </div>
         <div className={styles.lists}>
           <div className={styles.listItem}>
-            <span className={styles.title}>ショートカット</span>
+            <div className={styles.title}>ショートカット</div>
             <div className={styles.item}>ホームページ</div>
             <div className={styles.item}>会社概要</div>
             <div className={styles.item}>店舗紹介</div>
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             <div className={styles.item}>求人情報</div>
           </div>
           <div className={styles.listItem}>
-            <span className={styles.title}>店舗</span>
+            <div className={styles.title}>店舗</div>
             <div className={styles.item}>ホームページ</div>
             <div className={styles.item}>会社概要</div>
             <div className={styles.item}>店舗紹介</div>
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
             <div className={styles.item}>求人情報</div>
           </div>
           <div className={cs(styles.listItem, styles.noPointer)}>
-            <span className={styles.title}>連絡先</span>
+            <div className={styles.title}>連絡先</div>
             <div className={styles.item}>xxxxxx</div>
             <div className={styles.item}>xxxxxx</div>
             <div className={styles.item}>xxxxxx</div>

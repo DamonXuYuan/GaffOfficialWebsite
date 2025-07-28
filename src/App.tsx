@@ -1,16 +1,19 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import CompanyProfile from "./pages/CompanyProfile";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/companyProfile" element={<CompanyProfile />} />
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </Router>
   );
 }
 
