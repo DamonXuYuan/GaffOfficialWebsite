@@ -2,6 +2,9 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+  background: url("../../assets/img/homeShops.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
   .banner {
     width: 100%;
     height: 400px;
@@ -9,7 +12,6 @@
   }
   .aboutSection {
     background-color: #e6e6e6;
-    height: 794px;
     display: flex;
     justify-content: center;
     .content {
@@ -18,11 +20,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 90px;
+      padding: 90px 0;
       box-sizing: border-box;
       .title {
-        font-size: 28px;
         color: #7f0309;
+        font-size: 28px;
+        margin-bottom: 65px;
         padding-bottom: 30px;
         font-weight: bold;
         position: relative;
@@ -36,6 +39,80 @@
           left: 50%;
           transform: translateX(-50%);
         }
+      }
+      .subTitle {
+        color: #7f0309;
+        font-size: 19px;
+        line-height: 48px;
+        font-weight: bold;
+      }
+      .text {
+        width: 800px;
+        font-size: 19px;
+        line-height: 48px;
+        margin-bottom: 110px;
+        color: #2a2a2a;
+        text-align: center;
+      }
+      .detail {
+        width: 1100px;
+        display: flex;
+        justify-content: space-between;
+        .left,
+        .right {
+          width: calc(50% - 36px);
+          .infoItem {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            border-top: 2px solid #000;
+            font-size: 20px;
+            color: #000;
+            font-weight: 400;
+            .infoTitle {
+              color: #7f0309;
+            }
+            &:last-child {
+              border-bottom: 2px solid #000;
+            }
+          }
+        }
+        .right {
+          border-top: 2px solid #000;
+          .infoItem {
+            border: none;
+          }
+          .opcity {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  .logoSection {
+    width: 100%;
+    height: 363px;
+    display: flex;
+    .logoOne {
+      background-color: #2a2a2a;
+      width: calc(50% - 90px);
+      height: inherit;
+    }
+    .logoTwo {
+      background-color: #545454;
+      width: calc(50% - 90px);
+      height: inherit;
+    }
+    .logoThree {
+      background-color: #800309;
+      width: 180px;
+      height: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 74px;
+        height: 240px;
       }
     }
   }
