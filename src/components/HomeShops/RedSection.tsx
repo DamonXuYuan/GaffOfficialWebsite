@@ -63,12 +63,30 @@ export const list: Item[] = [
 
 const RedSection: React.FC = () => {
   const [newList, setNewList] = useState<any>([]);
-
+  // useEffect(() => {
+  //   const res = groupBy(shopList, window.innerWidth < 768 ? 1 : 3);
+  //   setNewList(res);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [shopList]);
   useEffect(() => {
-    const res = groupBy(shopList, 3);
-    setNewList(res);
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const res = groupBy(shopList, isMobile ? 1 : 3);
+      setNewList(res);
+    };
+
+    // 初始化
+    handleResize();
+
+    // 监听窗口变化
+    window.addEventListener("resize", handleResize);
+
+    // 清理
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shopList]);
+  }, [shopList]); // 依赖 shopList，当数据变化时也重新计算
 
   const groupBy = (arr: any, size: number) => {
     return Array.from({ length: Math.ceil(arr.length / size) }, (_, index) =>

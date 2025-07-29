@@ -4,23 +4,20 @@ import logo from "@/assets/img/bannerLogo.png";
 import { Button } from "antd";
 import cs from "classnames";
 
-import banner1 from "@/assets/img/banner/banner1.jpg";
-import banner2 from "@/assets/img/banner/banner2.jpg";
-import banner3 from "@/assets/img/banner/banner3.jpg";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useNavigate } from "react-router-dom";
 
 const Banner: React.FC = () => {
   const navigate = useNavigate();
-  const images = [banner1, banner2, banner3];
+  const images = [1, 2, 3];
   const [selectedIndex, setSelectedIndex] = useState(0); // 用 state 管理选中索引
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
       duration: 25, // 滚动动画速度
     },
-    [Autoplay({ delay: 50000 })] // 5秒自动切换
+    [Autoplay({ delay: 5000 })] // 5秒自动切换
   );
   // 生成 dot
   const scrollSnaps = emblaApi?.scrollSnapList() || [];
@@ -45,9 +42,7 @@ const Banner: React.FC = () => {
         <div className={styles.embla__viewport} ref={emblaRef}>
           <div className={styles.embla__container}>
             {images.map((src, index) => (
-              <div className={styles.embla__slide} key={index}>
-                <img src={src} alt={`Slide ${index + 1}`} />
-              </div>
+              <div className={styles.embla__slide} key={index} />
             ))}
           </div>
         </div>

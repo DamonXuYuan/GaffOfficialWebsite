@@ -8,7 +8,7 @@
   left: 0;
   background-color: #2a2a2a;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-  z-index: 9;
+  z-index: 99;
   .content {
     width: 1440px;
     height: inherit;
@@ -42,6 +42,27 @@
       .active {
         color: #890b0f;
         border-bottom: 3px solid #890b0f;
+      }
+    }
+    .mobileMenu {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .content {
+      width: 100%;
+      padding: 0 40px;
+      box-sizing: border-box;
+      .menuSection {
+        display: none;
+      }
+      .mobileMenu {
+        display: flex;
+        .menuIcon {
+          width: 48px;
+          height: 48px;
+        }
       }
     }
   }

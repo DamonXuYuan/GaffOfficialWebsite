@@ -9,6 +9,7 @@
     "@types/canvas-confetti": "^1.6.0",
     "@types/node-sass": "^4.11.3",
     "antd": "^5.26.6",
+    "antd-mobile": "^5.39.0",
     "canvas-confetti": "^1.6.0",
     "classnames": "^2.5.1",
     "css-loader": "^6.7.3",

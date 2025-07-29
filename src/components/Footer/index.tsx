@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
   return (
     <section className={styles.footer}>
       <div className={styles.content}>
-        <div className={styles.logo}>
+        <div className={styles.logo} onClick={() => navigate("/")}>
           <img src={logo} alt="" />
         </div>
         <div className={styles.lists}>

@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./style.module.scss";
 import cs from "classnames";
 import logo from "@/assets/img/logo.png";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Popup } from "antd-mobile";
+
+import meneIcon from "@/assets/img/mobileMenu.png";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
     <section className={styles.header}>
@@ -53,6 +57,28 @@ const Header: React.FC = () => {
           >
             店舗紹介
           </div>
+        </div>
+        {/* 移动端Menu按钮 */}
+        <div className={styles.mobileMenu}>
+          <img
+            src={meneIcon}
+            alt="menu"
+            className={styles.menuIcon}
+            onClick={() => setShowMobileMenu(true)}
+          />
+          <Popup
+            visible={showMobileMenu}
+            onMaskClick={() => {
+              setShowMobileMenu(false);
+            }}
+            onClose={() => {
+              setShowMobileMenu(false);
+            }}
+            position="top"
+            bodyStyle={{ height: "40vh" }}
+          >
+            123
+          </Popup>
         </div>
       </div>
     </section>
