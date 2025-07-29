@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./style.module.scss";
 import cs from "classnames";
-import logo from "@/assets/img/logoAbout.png";
 import Footer from "@/components/Footer";
 
+import banner from "@/assets/img/companyProfileBanner.jpg";
+
 const CompanyProfile: React.FC = () => {
+  useEffect(() => {
+    // 页面加载时滚动到顶部
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className={styles.companyProfile}>
-      <div className={styles.banner}></div>
-      {/* 关于我们 */}
+      <div className={styles.banner}>
+        <img src={banner} alt="banner" />
+      </div>
+      {/* 会社概要 */}
       <div className={styles.aboutSection}>
         <div className={styles.content}>
           <div className={styles.title}>会社概要</div>
@@ -72,14 +79,6 @@ const CompanyProfile: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      {/* logo区域 */}
-      <div className={styles.logoSection}>
-        <div className={styles.logoOne}></div>
-        <div className={styles.logoTwo}></div>
-        <div className={styles.logoThree}>
-          <img src={logo} alt="" />
         </div>
       </div>
       <Footer />

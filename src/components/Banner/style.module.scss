@@ -3,8 +3,64 @@
   height: calc(100vh - 90px);
   display: flex;
   justify-content: center;
-  background: url("../../assets/img/banner.png");
-  background-repeat: no-repeat;
+  position: relative;
+  .embla {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .embla__viewport {
+      height: 100%;
+      overflow: hidden;
+      .embla__container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        touch-action: pan-y;
+        .embla__slide {
+          min-width: 100%;
+          position: relative;
+          img {
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+  .embla__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    .embla__dot {
+      /* 基础样式 */
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: #800309;
+      margin-right: 25px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .embla__dotActive {
+      background-color: #fff;
+    }
+  }
   .content {
     width: 1440px;
     height: inherit;
@@ -15,6 +71,7 @@
       width: 620px;
       height: 190px;
       margin-bottom: 20px;
+      z-index: 1;
     }
     .name {
       font-size: 40px;

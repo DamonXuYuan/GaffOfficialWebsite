@@ -5,3 +5,15 @@ html {
   color: #fff;
   overflow-x: hidden;
 }
+
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+html:hover::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}

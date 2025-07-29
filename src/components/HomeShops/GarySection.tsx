@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import cs from "classnames";
 
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-import { Item, list } from "./RedSection";
+import { shopList } from "@/pages/ShopProfile";
 
 const GarySection: React.FC = () => {
+  const [imgList, setImgList] = useState<string[]>([]);
   const [emblaRef1] = useEmblaCarousel(
     {
       axis: "x",
@@ -40,37 +41,56 @@ const GarySection: React.FC = () => {
       }),
     ]
   );
+  useEffect(() => {
+    let list: string[] = [];
+    shopList.forEach((item) => {
+      item.imgs.forEach((ite) => {
+        list.push(ite);
+      });
+    });
+    setImgList(list);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [shopList]);
   return (
     <section className={styles.garySection}>
       <div className={styles.content}>
         <div className={styles.detail}>
           <div className={styles.left}>
-            <div className={styles.infoItem}>SHE WOLF DINER（渋谷店）</div>
-            <div className={styles.infoItem}>撒椒小酒館（大久保店）</div>
-            <div className={styles.infoItem}>座·撒椒（渋谷東武ホテル店）</div>
-            <div className={styles.infoItem}>黔荘貴州牛羊粉</div>
-            <div className={styles.infoItem}>天府火鍋巷子</div>
+            {shopList.map((item, index) => {
+              return (
+                index < shopList.length / 2 && (
+                  <div className={styles.infoItem} key={`left${index}`}>
+                    {item?.name}
+                  </div>
+                )
+              );
+            })}
           </div>
           <div className={styles.right}>
-            <div className={styles.infoItem}>楊国府麻辣湯（神保町店）</div>
-            <div className={styles.infoItem}>楊国府麻辣湯（池袋西口店）</div>
-            <div className={styles.infoItem}>炉ノ鳥（銀座店）</div>
+            {shopList.map((item, index) => {
+              return (
+                index >= shopList.length / 2 && (
+                  <div className={styles.infoItem} key={`right${index}`}>
+                    {item?.name}
+                  </div>
+                )
+              );
+            })}
           </div>
         </div>
       </div>
       <div className={styles.emblaList}>
         <div className={styles.embla} ref={emblaRef1}>
           <div className={cs(styles.embla__container, styles.embla__rtl)}>
-            {list.map((item: Item, index: number) => {
+            {imgList.map((item: string, index: number) => {
               return (
                 <div
                   key={index}
                   className={cs(styles.item, styles.embla__slide)}
                 >
                   <div className={styles.img}>
-                    <img src={item.imgUrl} alt="" />
+                    <img src={item} alt="" />
                   </div>
-                  {/* <div className={styles.name}>{item.name}</div> */}
                 </div>
               );
             })}
@@ -78,12 +98,11 @@ const GarySection: React.FC = () => {
         </div>
         <div className={styles.embla} ref={emblaRef2}>
           <div className={styles.embla__container}>
-            {list.map((item, index) => (
+            {imgList.map((item, index) => (
               <div key={index} className={cs(styles.item, styles.embla__slide)}>
                 <div className={styles.img}>
-                  <img src={item.imgUrl} alt="" />
+                  <img src={item} alt="" />
                 </div>
-                {/* <div className={styles.name}>{item.name}</div> */}
               </div>
             ))}
           </div>

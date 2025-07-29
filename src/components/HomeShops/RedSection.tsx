@@ -4,6 +4,7 @@ import { Carousel } from "antd";
 import img from "@/assets/img/banner.png";
 import arrowIcon from "@/assets/img/arrowIcon.png";
 import nextIcon from "@/assets/img/nextIcon.png";
+import { shopList } from "@/pages/ShopProfile";
 
 export interface Item {
   imgUrl: string;
@@ -64,9 +65,10 @@ const RedSection: React.FC = () => {
   const [newList, setNewList] = useState<any>([]);
 
   useEffect(() => {
-    const res = groupBy(list, 3);
+    const res = groupBy(shopList, 3);
     setNewList(res);
-  }, [list]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [shopList]);
 
   const groupBy = (arr: any, size: number) => {
     return Array.from({ length: Math.ceil(arr.length / size) }, (_, index) =>
@@ -95,7 +97,7 @@ const RedSection: React.FC = () => {
                     return (
                       <div key={ind} className={styles.item}>
                         <div className={styles.img}>
-                          <img src={ite.imgUrl} alt="" />
+                          <img src={ite.imgs?.[0]} alt="" />
                         </div>
                         <div className={styles.name}>{ite.name}</div>
                       </div>

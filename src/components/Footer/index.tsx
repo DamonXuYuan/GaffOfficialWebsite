@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import logo from "@/assets/img/logoFooter.png";
 import cs from "classnames";
 import { useNavigate } from "react-router-dom";
+import { shopList } from "@/pages/ShopProfile";
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -15,7 +16,9 @@ const Footer: React.FC = () => {
         </div>
         <div className={styles.lists}>
           <div className={styles.listItem}>
-            <div className={styles.title}>ショートカット</div>
+            <div className={cs(styles.title, styles.opcity)}>
+              ショートカット
+            </div>
             <div className={styles.item} onClick={() => navigate("/")}>
               ホームページ
             </div>
@@ -30,7 +33,7 @@ const Footer: React.FC = () => {
             <div
               className={styles.item}
               onClick={() => {
-                navigate("/shopProfile");
+                navigate("/shopProfile#1");
               }}
             >
               店舗紹介
@@ -38,20 +41,39 @@ const Footer: React.FC = () => {
           </div>
           <div className={styles.listItem}>
             <div className={styles.title}>店舗</div>
-            <div className={styles.item}>SHE WOLF DINER（渋谷店）</div>
-            <div className={styles.item}>撒椒小酒館（大久保店）</div>
-            <div className={styles.item}>座·撒椒（渋谷東武ホテル店）</div>
-            <div className={styles.item}>黔荘貴州牛羊粉</div>
-            <div className={styles.item}>天府火鍋巷子</div>
-            <div className={styles.item}>楊国府麻辣湯（神保町店）</div>
-            <div className={styles.item}>楊国府麻辣湯（池袋西口店）</div>
-            <div className={styles.item}>炉ノ鳥（銀座店）</div>
+            {shopList.map((item, index) => {
+              return (
+                index < shopList.length / 2 && (
+                  <div
+                    className={styles.item}
+                    key={index}
+                    onClick={() => {
+                      navigate(`/shopProfile#${String(item.id)}`);
+                    }}
+                  >
+                    {item.name}
+                  </div>
+                )
+              );
+            })}
           </div>
-          <div className={cs(styles.listItem, styles.noPointer)}>
-            <div className={styles.title}>連絡先</div>
-            <div className={styles.item}>xxxxxx</div>
-            <div className={styles.item}>xxxxxx</div>
-            <div className={styles.item}>xxxxxx</div>
+          <div className={cs(styles.listItem)}>
+            <div className={cs(styles.title, styles.opcity)}>店舗</div>
+            {shopList.map((item, index) => {
+              return (
+                index >= shopList.length / 2 && (
+                  <div
+                    className={styles.item}
+                    key={index}
+                    onClick={() => {
+                      navigate(`/shopProfile#${String(item.id)}`);
+                    }}
+                  >
+                    {item.name}
+                  </div>
+                )
+              );
+            })}
           </div>
         </div>
       </div>
