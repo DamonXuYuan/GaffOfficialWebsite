@@ -52,6 +52,7 @@
           display: flex;
           flex-direction: column;
           width: 396px;
+          cursor: pointer;
           .img {
             width: 100%;
             height: 472px;
@@ -214,7 +215,7 @@
             }
             .name {
               height: 50px;
-              font-size: 12px;
+              font-size: 16px;
               line-height: 50px;
               padding: 0 18px;
             }
@@ -276,26 +277,21 @@
         padding: 50px 0;
         margin-top: 35px;
         .embla {
-          transform: rotate(5deg);
-          &:last-child {
-            transform: rotate(-5deg);
-          }
           &:first-child {
             margin-bottom: 10px;
           }
         }
         .embla__slide {
-          flex: 0 0 50%; /* 一行显示4张，可调整 */
-          padding: 0 0px; /* 图片间距 */
+          flex: 0 0 40%; /* 一行显示4张，可调整 */
+          padding: 0 10px; /* 图片间距 */
         }
         .item {
-          width: 160px;
-          height: 110px;
-          margin-right: 0px;
+          width: 150px;
+          height: 150px;
+          margin-right: 10px;
           .img {
-            img {
-              border-radius: 0;
-            }
+            width: 150px;
+            height: 150px;
           }
         }
       }

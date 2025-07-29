@@ -59,14 +59,14 @@
         .info {
           display: flex;
           flex-direction: column;
-          padding-bottom: 25px;
+          padding-bottom: 15px;
           border-bottom: 1px solid #fff;
           .shopName {
             font-size: 40px;
-            line-height: 58px;
+            line-height: 1;
             font-weight: 700;
-            margin-bottom: 55px;
             padding-left: 30px;
+            margin-bottom: 15px;
             position: relative;
             &::before {
               content: "";
@@ -80,11 +80,21 @@
               transform: translateY(-50%);
             }
           }
+          .time {
+            padding-left: 30px;
+            font-size: 20px;
+            line-height: 1;
+            margin-bottom: 15px;
+          }
           .text {
             font-size: 25px;
             font-weight: 400;
-            line-height: 36px;
-            margin-bottom: 5px;
+            line-height: 1;
+            padding-left: 30px;
+            margin-bottom: 35px;
+            .tel {
+              margin-left: 100px;
+            }
             &:last-child {
               margin-bottom: 0;
             }
@@ -107,6 +117,13 @@
           font-size: 24px;
           line-height: 34px;
           color: #fff;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .desPro2 {
+            margin-top: 50px;
+          }
         }
         .redDes {
           background-color: rgba(128, 3, 9, 1);
@@ -156,6 +173,9 @@
                 .text {
                   font-size: 16px;
                   line-height: 34px;
+                  span {
+                    opacity: 0;
+                  }
                 }
               }
             }

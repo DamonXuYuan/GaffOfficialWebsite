@@ -5,6 +5,7 @@ import img from "@/assets/img/banner.png";
 import arrowIcon from "@/assets/img/arrowIcon.png";
 import nextIcon from "@/assets/img/nextIcon.png";
 import { shopList } from "@/pages/ShopProfile";
+import { useNavigate } from "react-router-dom";
 
 export interface Item {
   imgUrl: string;
@@ -62,12 +63,9 @@ export const list: Item[] = [
 ];
 
 const RedSection: React.FC = () => {
+  const navigate = useNavigate();
   const [newList, setNewList] = useState<any>([]);
-  // useEffect(() => {
-  //   const res = groupBy(shopList, window.innerWidth < 768 ? 1 : 3);
-  //   setNewList(res);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [shopList]);
+
   useEffect(() => {
     const handleResize = () => {
       const isMobile = window.innerWidth < 768;
@@ -113,9 +111,15 @@ const RedSection: React.FC = () => {
                 <div key={index} className={styles.carouselItem}>
                   {item.map((ite: any, ind: number) => {
                     return (
-                      <div key={ind} className={styles.item}>
+                      <div
+                        key={ind}
+                        className={styles.item}
+                        onClick={() => {
+                          navigate(`/shopProfile#${String(ite.id)}`);
+                        }}
+                      >
                         <div className={styles.img}>
-                          <img src={ite.imgs?.[0]} alt="" />
+                          <img src={ite.imgs?.[7]} alt="" />
                         </div>
                         <div className={styles.name}>{ite.name}</div>
                       </div>

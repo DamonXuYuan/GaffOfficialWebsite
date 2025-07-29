@@ -10,6 +10,51 @@ import bus from "@/assets/img/shopProfile/bus.png";
 import img from "@/assets/img/banner.png";
 import { useLocation } from "react-router-dom";
 
+import shop1img1 from "@/assets/img/shopProfile/shop1/img1.jpg";
+import shop1img2 from "@/assets/img/shopProfile/shop1/img2.jpg";
+import shop1img3 from "@/assets/img/shopProfile/shop1/img3.jpg";
+import shop1img4 from "@/assets/img/shopProfile/shop1/img4.jpg";
+import shop1img5 from "@/assets/img/shopProfile/shop1/img5.jpg";
+import shop1img6 from "@/assets/img/shopProfile/shop1/img6.jpg";
+import shop1img7 from "@/assets/img/shopProfile/shop1/img7.jpg";
+import shop1img8 from "@/assets/img/shopProfile/shop1/img8.jpg";
+
+import shop2img1 from "@/assets/img/shopProfile/shop2/img1.jpg";
+import shop2img2 from "@/assets/img/shopProfile/shop2/img2.jpg";
+import shop2img3 from "@/assets/img/shopProfile/shop2/img3.jpg";
+import shop2img4 from "@/assets/img/shopProfile/shop2/img4.jpg";
+import shop2img5 from "@/assets/img/shopProfile/shop2/img5.jpg";
+import shop2img6 from "@/assets/img/shopProfile/shop2/img6.jpg";
+import shop2img7 from "@/assets/img/shopProfile/shop2/img7.jpg";
+import shop2img8 from "@/assets/img/shopProfile/shop2/img8.jpg";
+
+import shop3img1 from "@/assets/img/shopProfile/shop3/img1.jpg";
+import shop3img2 from "@/assets/img/shopProfile/shop3/img2.jpg";
+import shop3img3 from "@/assets/img/shopProfile/shop3/img3.jpg";
+import shop3img4 from "@/assets/img/shopProfile/shop3/img4.jpg";
+import shop3img5 from "@/assets/img/shopProfile/shop3/img5.jpg";
+import shop3img6 from "@/assets/img/shopProfile/shop3/img6.jpg";
+import shop3img7 from "@/assets/img/shopProfile/shop3/img7.jpg";
+import shop3img8 from "@/assets/img/shopProfile/shop3/img8.jpg";
+
+import shop4img1 from "@/assets/img/shopProfile/shop4/img1.jpg";
+import shop4img2 from "@/assets/img/shopProfile/shop4/img2.jpg";
+import shop4img3 from "@/assets/img/shopProfile/shop4/img3.jpg";
+import shop4img4 from "@/assets/img/shopProfile/shop4/img4.jpg";
+import shop4img5 from "@/assets/img/shopProfile/shop4/img5.jpg";
+import shop4img6 from "@/assets/img/shopProfile/shop4/img6.jpg";
+import shop4img7 from "@/assets/img/shopProfile/shop4/img7.jpg";
+import shop4img8 from "@/assets/img/shopProfile/shop4/img8.jpg";
+
+import shop5img1 from "@/assets/img/shopProfile/shop5/img1.jpg";
+import shop5img2 from "@/assets/img/shopProfile/shop5/img2.jpg";
+import shop5img3 from "@/assets/img/shopProfile/shop5/img3.jpg";
+import shop5img4 from "@/assets/img/shopProfile/shop5/img4.jpg";
+import shop5img5 from "@/assets/img/shopProfile/shop5/img5.jpg";
+import shop5img6 from "@/assets/img/shopProfile/shop5/img6.jpg";
+import shop5img7 from "@/assets/img/shopProfile/shop5/img7.jpg";
+import shop5img8 from "@/assets/img/shopProfile/shop5/img8.jpg";
+
 export interface ShopItem {
   id: number;
   name: string;
@@ -18,6 +63,7 @@ export interface ShopItem {
   tel?: string;
   des?: string;
   desPro: string;
+  desPro2?: string;
   mapAddr: string | string[];
   mapBus: string | string[];
   imgs: string[];
@@ -29,13 +75,22 @@ export const shopList: ShopItem[] = [
     name: "品川バードマン",
     time: "(2020年11月6日開店)",
     address: "東京都港区港南2-3-28 第三協和ビル 1階",
-    tel: "050-5869-7361",
+    tel: "03-6712-9969",
     des: "フレッシュさにこだわった鶏を使用する焼き鳥居酒屋です。希少部位あり！",
     desPro:
       "【品川駅港南口徒歩1分】国産地鶏を使用した焼き鳥は、定番から希少部位まで常時10種類以上をご用意。新鮮さをモットーに仕入れルートにもこだわりを持ちます。自家製の生つくねもおすすめです。また、卓上のセルフサーバーでお客様ご自身でお楽しみいただく「卓上ハイボール、レモンサワー」の飲み放題!お客様のペースでたっぷりとハイボールをお楽しみいただける画期的なシステムは当店の魅力の1つです!",
-    mapAddr: ["東京都港区港南2-3-28", "第三協和ビル 1階"],
-    mapBus: ["品川駅港南口ら徒歩1分品川駅から396m", ""],
-    imgs: [img, img, img, img, img, img, img],
+    mapAddr: ["東京都港区港南2-3-28第三協和ビル 1階", ""],
+    mapBus: ["品川駅港南口から徒歩1分", "品川駅から396m"],
+    imgs: [
+      shop1img1,
+      shop1img2,
+      shop1img3,
+      shop1img4,
+      shop1img5,
+      shop1img6,
+      shop1img7,
+      shop1img8,
+    ],
   },
   {
     id: 2,
@@ -46,47 +101,83 @@ export const shopList: ShopItem[] = [
     des: "本場ハンバーガーやクラフトビールが楽しめるアメリカンダイナー。",
     desPro:
       "アメリカ料理をテーマに、手ごねのジューシーなパティ、甘味のあるグリルオニオン、自家製のアリオリソース、バンズにこだわったバランスの良い、本場アメリカのハンバーガーを味わってください。クラフトビールや日本の定番ビールなど、様々な味を取り揃えておりますので、夜はお酒をメインにお楽しみいただくことも♪",
-    mapAddr: ["東京都渋谷区宇田川町3-1", ""],
+    mapAddr: ["東京都渋谷区宇田川町3ｰ1", "渋谷東武ホテル1階"],
     mapBus: ["渋谷駅から徒歩5~10分", "渋谷駅から521m"],
-    imgs: [img, img, img, img, img, img, img],
+    imgs: [
+      shop2img1,
+      shop2img2,
+      shop2img3,
+      shop2img4,
+      shop2img5,
+      shop2img6,
+      shop2img7,
+      shop2img8,
+    ],
   },
   {
     id: 3,
     name: "撒椒小酒館 大久保店",
-    time: "(2022年2月14開店)",
-    address: "東京都新宿区百人町1-18-8 大久保カドビル101号室",
+    time: "(2022年2月14日開店)",
+    address: "東京都新宿区百人町1-18-8 大久保カドビル1F",
     tel: "03-6908-9164",
     des: "充実したランチ＆ディナーメニューの本格四川中華料理",
     desPro:
       "ご提供するのは、唐辛子をしっかり効かせた四川料理がメインのネオ中華！新鮮な驚きと共に本場の味を満喫する、楽しいひと時をお過ごしいただけます。一押しは、柔らかいナマズを使用した魚料理“烤魚”。そのほかプリプリ食感のザリガニ料理や、クセになる味わいの自家製ドリンクもおすすめです。",
     mapAddr: ["東京都新宿区百人町1-18-8", "大久保カドビル 1F"],
     mapBus: ["JR大久保駅徒歩3分", "大久保駅から230m"],
-    imgs: [img, img, img, img, img, img, img],
+    imgs: [
+      shop3img1,
+      shop3img2,
+      shop3img3,
+      shop3img4,
+      shop3img5,
+      shop3img6,
+      shop3img7,
+      shop3img8,
+    ],
   },
   {
     id: 4,
-    name: "座・撒椒 渋谷東武ホテル店",
+    name: "座 撒椒 渋谷東武ホテル店",
     time: "(2023年4月1日開店)",
     address: "東京都渋谷区宇田川町3-1 渋谷東武ホテル地下1階",
     tel: "03-6452-5995",
-    des: "充実したランチ＆ディナーメニューの本格四川中華料理",
-    desPro: `人気番組で連続放送されました！『マツコの知らない世界』・【マジ中華の世界】の特集など人気番組に紹介されました！今メディアからもありがたいことに大人気です★
-魚の甘辛酢焼き魚や熱々石焼麻婆豆腐、やみつきよだれ鶏や自家製・小籠包の定番料理から仕切り鍋や北京ダックなど本格中華料理をお楽しみいただける多数のコースをご用意。明るい店内はインスタ映えするのはもちろん、お食事とともに空間もお楽しみいただけます。`,
+    des: "【マジ中華の世界】特集で紹介された人気店芸能人やyoutuber&TikToker多数来店!渋谷駅近!名物石鍋麻婆豆腐など本場の味を楽しめる中華料理専門居酒屋です。",
+    desPro: `魚の甘辛酢焼き魚や熱々石焼麻婆豆腐、やみつきよだれ鶏や自家製・小籠包の定番料理から仕切り鍋や北京ダックなど本格中華料理をお楽しみいただける多数のコースをご用意。明るい店内はインスタ映えするのはもちろん、お食事とともに空間もお楽しみいただけます。`,
+    desPro2: `人気番組で連続放送されました！『マツコの知らない世界』・【マジ中華の世界】の特集など人気番組に紹介されました！今メディアからもありがたいことに大人気です★`,
     mapAddr: ["東京都渋谷区宇田川町3-1", "渋谷東武ホテル B1F"],
     mapBus: ["渋谷駅ハチ公口から徒歩5分", "渋谷駅から517m"],
-    imgs: [img, img, img, img, img, img, img],
+    imgs: [
+      shop4img1,
+      shop4img2,
+      shop4img3,
+      shop4img4,
+      shop4img5,
+      shop4img6,
+      shop4img7,
+      shop4img8,
+    ],
   },
   {
     id: 5,
-    name: "黔荘貴州牛羊粉",
+    name: "黔荘 貴州牛羊粉",
     time: "(2023年12月25日開店)",
     address: "東京都新宿区百人町1-18-9大久保センタービル101室",
     tel: "03-6279-3758",
     des: "米粉（米で作った面です）中国貴州の有名な軽食です。",
-    desPro: `鮮牛肉または鮮羊肉を主材料とし、特製の米麺（ミーフェン）と合わせて調理される中国伝統的な軽食。`,
-    mapAddr: ["東京都新宿区百人町1-18-9", "大久保センタービル"],
+    desPro: `当店では四川料理人直伝・中国貴州地方の伝統料理をカジュアルにお楽しみいただけます。一押しの麺料理は、牛骨と多彩な漢方薬を使った濃厚なスープが魅力の「牛肉粉」や、羊肉の旨味を存分に引き出したスープが味わえる「羊肉粉」。日本ではなかなかお目にかかれない本場さながらの味を心ゆくまでご堪能ください◎店内はモダンでスタイリッシュな雰囲気を演出。おひとり様やご家族連れ・お集まりなど様々なシーンに対応可能です。`,
+    mapAddr: ["東京都新宿区百人町1-18-9", "大久保センタービル1F"],
     mapBus: ["大久保駅から213m", ""],
-    imgs: [img, img, img, img, img, img, img],
+    imgs: [
+      shop5img1,
+      shop5img2,
+      shop5img3,
+      shop5img4,
+      shop5img5,
+      shop5img6,
+      shop5img7,
+      shop5img8,
+    ],
   },
   {
     id: 6,
@@ -235,16 +326,12 @@ const ShopProfile: React.FC = () => {
                 {/* 店铺信息 */}
                 <div className={styles.info}>
                   {/* 店铺名 */}
-                  <div className={styles.shopName}>
-                    {item?.name} {item?.time}
-                  </div>
+                  <div className={styles.shopName}>{item?.name}</div>
+                  <div className={styles.time}>{item?.time}</div>
                   {/* 所在地 */}
                   <div className={cs(styles.address, styles.text)}>
                     所在地：{item?.address}
-                  </div>
-                  {/* Tel */}
-                  <div className={cs(styles.address, styles.text)}>
-                    Tel：{item?.tel}
+                    <span className={styles.tel}>Tel: {item?.tel}</span>
                   </div>
                   {/* 描述 */}
                   <div className={cs(styles.address, styles.text)}>
@@ -263,6 +350,9 @@ const ShopProfile: React.FC = () => {
                   )}
                 >
                   {item?.desPro}
+                  {item?.desPro2 && (
+                    <span className={styles.desPro2}>{item?.desPro2}</span>
+                  )}
                 </div>
                 {/* 图片2、图片3、图片4、图片5、图片6 */}
                 <div className={styles.imgs}>
@@ -283,7 +373,10 @@ const ShopProfile: React.FC = () => {
                           住所: {item?.mapAddr[0]}
                         </div>
                         {item?.mapAddr[1] && (
-                          <div className={styles.text}>{item?.mapAddr[1]}</div>
+                          <div className={styles.text}>
+                            <span>住所: </span>
+                            {item?.mapAddr[1]}
+                          </div>
                         )}
                       </div>
                     </div>
@@ -294,7 +387,10 @@ const ShopProfile: React.FC = () => {
                           アクセス: {item?.mapBus[0]}
                         </div>
                         {item?.mapBus[1] && (
-                          <div className={styles.text}>{item?.mapBus[1]}</div>
+                          <div className={styles.text}>
+                            <span>アクセス: </span>
+                            {item?.mapBus[1]}
+                          </div>
                         )}
                       </div>
                     </div>
