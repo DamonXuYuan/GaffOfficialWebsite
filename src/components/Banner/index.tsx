@@ -9,8 +9,10 @@ import banner2 from "@/assets/img/banner/banner2.jpg";
 import banner3 from "@/assets/img/banner/banner3.jpg";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useNavigate } from "react-router-dom";
 
 const Banner: React.FC = () => {
+  const navigate = useNavigate();
   const images = [banner1, banner2, banner3];
   const [selectedIndex, setSelectedIndex] = useState(0); // 用 state 管理选中索引
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -71,7 +73,14 @@ const Banner: React.FC = () => {
       <div className={styles.content}>
         <img src={logo} alt="logo" className={styles.logo} />
         <span className={styles.name}>株式会社gaff</span>
-        <Button className={styles.btn}>クリックして見る</Button>
+        <Button
+          className={styles.btn}
+          onClick={() => {
+            navigate("/companyProfile");
+          }}
+        >
+          クリックして見る
+        </Button>
       </div>
     </section>
   );
