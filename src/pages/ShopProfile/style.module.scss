@@ -6,10 +6,10 @@
   .banner {
     width: 100%;
     height: 400px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
+    background: url("../../assets/img/shopProfile/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    background-position: center 0;
   }
   .shopItem {
     width: 100%;
@@ -140,6 +140,9 @@
             height: 400px;
             margin-bottom: 35px;
           }
+          .miniImgMobile {
+            display: none;
+          }
           .bigImg {
             width: calc(100% - 435px);
             height: 400px;
@@ -232,5 +235,121 @@
     background: url("../../assets/img/shopProfile/footer.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+  }
+  @media (max-width: 767px) {
+    .banner {
+      height: 195px;
+      background: url("../../assets/img/shopProfile/bannerMobile.jpg");
+    }
+    .shopItem {
+      .content {
+        width: 100%;
+        padding: 60px 25px 0;
+        box-sizing: border-box;
+        .line {
+          margin-bottom: 35px;
+          img {
+            width: 85px;
+          }
+        }
+        .shop {
+          padding: 0;
+          .info {
+            .shopName {
+              font-size: 20px;
+              padding-left: 20px;
+              &::before {
+                width: 8px;
+                height: 8px;
+              }
+            }
+            .time {
+              padding-left: 20px;
+              font-size: 16px;
+              line-height: 1;
+              margin-bottom: 20px;
+            }
+            .text {
+              display: flex;
+              flex-direction: column;
+              font-size: 14px;
+              line-height: 1;
+              padding-left: 20px;
+              margin-bottom: 20px;
+              .tel {
+                margin-left: 0;
+                margin-top: 10px;
+              }
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+          .img1 {
+            width: 100%;
+            height: 140px;
+            margin: 20px 0 20px 0;
+          }
+          .desPro {
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 25px;
+            .desPro2 {
+              margin-top: 20px;
+            }
+          }
+          .imgs {
+            .miniImg {
+              width: calc(50% - 10px);
+              height: auto;
+              margin-bottom: 20px;
+            }
+            .miniImgMobile {
+              display: block;
+            }
+            .miniImgPc {
+              display: none;
+            }
+            .bigImg {
+              width: 100%;
+              height: auto;
+              margin-bottom: 20px;
+            }
+          }
+          .mapSection {
+            flex-direction: column;
+            .mapImg {
+              width: 100%;
+              height: auto;
+              margin-right: 0;
+              margin-bottom: 20px;
+            }
+            .mapInfo {
+              .addr,
+              .bus {
+                margin-bottom: 20px;
+                img {
+                  width: 25px;
+                  height: 24px;
+                }
+                .texts {
+                  .text {
+                    font-size: 12px;
+                    line-height: 24px;
+                    span {
+                      opacity: 0;
+                    }
+                  }
+                }
+              }
+              .hasTwo {
+                align-items: flex-start;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

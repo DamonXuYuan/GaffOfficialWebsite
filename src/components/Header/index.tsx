@@ -75,9 +75,44 @@ const Header: React.FC = () => {
               setShowMobileMenu(false);
             }}
             position="top"
-            bodyStyle={{ height: "40vh" }}
+            bodyClassName={styles.mobileMenuPopup}
           >
-            123
+            <div
+              className={cs(
+                styles.menuItem,
+                location?.pathname === "/" && styles.active
+              )}
+              onClick={() => {
+                navigate("/");
+                setShowMobileMenu(false);
+              }}
+            >
+              ホームページ
+            </div>
+            <div
+              className={cs(
+                styles.menuItem,
+                location?.pathname === "/companyProfile" && styles.active
+              )}
+              onClick={() => {
+                navigate("/companyProfile");
+                setShowMobileMenu(false);
+              }}
+            >
+              会社概要
+            </div>
+            <div
+              className={cs(
+                styles.menuItem,
+                location?.pathname === "/shopProfile" && styles.active
+              )}
+              onClick={() => {
+                navigate("/shopProfile");
+                setShowMobileMenu(false);
+              }}
+            >
+              店舗紹介
+            </div>
           </Popup>
         </div>
       </div>

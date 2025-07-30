@@ -3,7 +3,6 @@ import styles from "./style.module.scss";
 import cs from "classnames";
 import Footer from "@/components/Footer";
 
-import banner from "@/assets/img/shopProfile/banner.jpg";
 import logo from "@/assets/img/shopProfile/logo.png";
 import addr from "@/assets/img/shopProfile/addr.png";
 import bus from "@/assets/img/shopProfile/bus.png";
@@ -300,9 +299,7 @@ const ShopProfile: React.FC = () => {
   }, [location]); // 依赖 location，监听 hash 变化
   return (
     <section className={styles.shopProfile}>
-      <div className={styles.banner}>
-        <img src={banner} alt="banner" />
-      </div>
+      <div className={styles.banner} />
       {shopList.map((item: ShopItem, index: number) => {
         return (
           <div
@@ -357,8 +354,17 @@ const ShopProfile: React.FC = () => {
                 {/* 图片2、图片3、图片4、图片5、图片6 */}
                 <div className={styles.imgs}>
                   <img src={item?.imgs[1]} alt="" className={styles.miniImg} />
+                  <img
+                    src={item?.imgs[3]}
+                    alt=""
+                    className={cs(styles.miniImg, styles.miniImgMobile)}
+                  />
                   <img src={item?.imgs[2]} alt="" className={styles.bigImg} />
-                  <img src={item?.imgs[3]} alt="" className={styles.miniImg} />
+                  <img
+                    src={item?.imgs[3]}
+                    alt=""
+                    className={cs(styles.miniImg, styles.miniImgPc)}
+                  />
                   <img src={item?.imgs[4]} alt="" className={styles.miniImg} />
                   <img src={item?.imgs[5]} alt="" className={styles.miniImg} />
                 </div>
@@ -366,7 +372,12 @@ const ShopProfile: React.FC = () => {
                 <div className={styles.mapSection}>
                   <img src={item?.imgs[6]} alt="" className={styles.mapImg} />
                   <div className={styles.mapInfo}>
-                    <div className={styles.addr}>
+                    <div
+                      className={cs(
+                        styles.addr,
+                        item?.mapAddr[1] && styles.hasTwo
+                      )}
+                    >
                       <img src={addr} alt="addr" />
                       <div className={styles.texts}>
                         <div className={styles.text}>
@@ -380,7 +391,12 @@ const ShopProfile: React.FC = () => {
                         )}
                       </div>
                     </div>
-                    <div className={styles.bus}>
+                    <div
+                      className={cs(
+                        styles.bus,
+                        item?.mapBus[1] && styles.hasTwo
+                      )}
+                    >
                       <img src={bus} alt="addbusr" />
                       <div className={styles.texts}>
                         <div className={styles.text}>

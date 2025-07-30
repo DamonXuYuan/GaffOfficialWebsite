@@ -44,8 +44,8 @@ const GarySection: React.FC = () => {
   useEffect(() => {
     let list: string[] = [];
     shopList.forEach((item) => {
-      item.imgs.forEach((ite) => {
-        list.push(ite);
+      item.imgs.forEach((ite, ind) => {
+        if (ind !== 0 && ind !== 2 && ind !== 6 && ind !== 7) list.push(ite);
       });
     });
     setImgList(list);
