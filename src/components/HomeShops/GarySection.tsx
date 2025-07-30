@@ -5,8 +5,10 @@ import cs from "classnames";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { shopList } from "@/pages/ShopProfile";
+import { useNavigate } from "react-router-dom";
 
 const GarySection: React.FC = () => {
+  const navigate = useNavigate();
   const [imgList, setImgList] = useState<string[]>([]);
   const [emblaRef1] = useEmblaCarousel(
     {
@@ -59,7 +61,13 @@ const GarySection: React.FC = () => {
             {shopList.map((item, index) => {
               return (
                 index < shopList.length / 2 && (
-                  <div className={styles.infoItem} key={`left${index}`}>
+                  <div
+                    className={styles.infoItem}
+                    key={`left${index}`}
+                    onClick={() => {
+                      navigate(`/shopProfile#${String(item.id)}`);
+                    }}
+                  >
                     {item?.name}
                   </div>
                 )
@@ -70,7 +78,13 @@ const GarySection: React.FC = () => {
             {shopList.map((item, index) => {
               return (
                 index >= shopList.length / 2 && (
-                  <div className={styles.infoItem} key={`right${index}`}>
+                  <div
+                    className={styles.infoItem}
+                    key={`right${index}`}
+                    onClick={() => {
+                      navigate(`/shopProfile#${String(item.id)}`);
+                    }}
+                  >
                     {item?.name}
                   </div>
                 )
