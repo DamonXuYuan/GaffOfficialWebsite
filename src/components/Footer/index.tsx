@@ -19,11 +19,14 @@ const Footer: React.FC = () => {
             <div className={cs(styles.title, styles.opcity)}>
               ショートカット
             </div>
-            <div className={styles.item} onClick={() => navigate("/")}>
+            <div
+              className={cs(styles.item, styles.noMr)}
+              onClick={() => navigate("/")}
+            >
               ホームページ
             </div>
             <div
-              className={styles.item}
+              className={cs(styles.item, styles.noMr)}
               onClick={() => {
                 navigate("/companyProfile");
               }}
@@ -31,7 +34,7 @@ const Footer: React.FC = () => {
               会社概要
             </div>
             <div
-              className={styles.item}
+              className={cs(styles.item, styles.noMr)}
               onClick={() => {
                 navigate("/shopProfile#1");
               }}
