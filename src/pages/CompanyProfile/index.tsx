@@ -19,14 +19,14 @@ const CompanyProfile: React.FC = () => {
       <div className={styles.aboutSection}>
         <div className={styles.content}>
           <div className={styles.title}>会社概要</div>
-          <div className={styles.subTitle}>
+          {/* <div className={styles.subTitle}>
             标语标语标语标语标语标语标语标语标语标语
           </div>
           <div className={styles.text}>
             内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容，
             内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容，
             内容内容内容内容内容内容内容内
-          </div>
+          </div> */}
           <div className={styles.detail}>
             <div className={styles.left}>
               <div className={styles.infoItem}>
@@ -36,7 +36,7 @@ const CompanyProfile: React.FC = () => {
               <div className={styles.infoItem}>
                 <span className={styles.infoTitle}>所在地：</span>
                 <span className={styles.infoText}>
-                  東京都豊島区東池袋３－１３－１２ー７０８号
+                  東京都豊島区東池袋<span>３－１３－１２ー７０８号</span>
                 </span>
               </div>
               <div className={styles.infoItem}>

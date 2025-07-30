@@ -82,6 +82,13 @@
             line-height: 16px;
             margin: 10px 0;
           }
+          &:last-child {
+            .item {
+              &:nth-child(2) {
+                margin-top: 0;
+              }
+            }
+          }
         }
         .opcity {
           display: none;

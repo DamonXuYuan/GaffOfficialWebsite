@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./style.module.scss";
-import { Carousel } from "antd";
 import img from "@/assets/img/banner.png";
 import arrowIcon from "@/assets/img/arrowIcon.png";
 import nextIcon from "@/assets/img/nextIcon.png";
 import { shopList } from "@/pages/ShopProfile";
 import { useNavigate } from "react-router-dom";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 export interface Item {
   imgUrl: string;
@@ -64,39 +65,55 @@ export const list: Item[] = [
 
 const RedSection: React.FC = () => {
   const navigate = useNavigate();
-  const [newList, setNewList] = useState<any>([]);
+  // const [newList, setNewList] = useState<any>([]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      duration: 25, // 滚动动画速度
+    },
+    [
+      Autoplay({
+        delay: 5000,
+        stopOnMouseEnter: true,
+        stopOnInteraction: false,
+      }),
+    ] // 5秒自动切换
+  );
 
-  useEffect(() => {
-    const handleResize = () => {
-      const isMobile = window.innerWidth < 768;
-      const res = groupBy(shopList, isMobile ? 1 : 3);
-      setNewList(res);
-    };
+  const scrollPrev = () => emblaApi?.scrollPrev();
+  const scrollNext = () => emblaApi?.scrollNext();
 
-    // 初始化
-    handleResize();
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const isMobile = window.innerWidth < 768;
+  //     const res = groupBy(shopList, isMobile ? 1 : 3);
+  //     setNewList(res);
+  //   };
 
-    // 监听窗口变化
-    window.addEventListener("resize", handleResize);
+  //   // 初始化
+  //   handleResize();
 
-    // 清理
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shopList]); // 依赖 shopList，当数据变化时也重新计算
+  //   // 监听窗口变化
+  //   window.addEventListener("resize", handleResize);
 
-  const groupBy = (arr: any, size: number) => {
-    return Array.from({ length: Math.ceil(arr.length / size) }, (_, index) =>
-      arr.slice(index * size, index * size + size)
-    );
-  };
+  //   // 清理
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [shopList]); // 依赖 shopList，当数据变化时也重新计算
+
+  // const groupBy = (arr: any, size: number) => {
+  //   return Array.from({ length: Math.ceil(arr.length / size) }, (_, index) =>
+  //     arr.slice(index * size, index * size + size)
+  //   );
+  // };
 
   return (
     <section className={styles.redSection}>
       <div className={styles.content}>
         <div className={styles.title}>店舗展示</div>
-        <div className={styles.carouselSection}>
+        {/* <div className={styles.carouselSection}>
           <Carousel
             arrows
             autoplay
@@ -129,6 +146,46 @@ const RedSection: React.FC = () => {
               );
             })}
           </Carousel>
+        </div> */}
+        <div className={styles.emblaSection}>
+          <img
+            src={arrowIcon}
+            alt="arrow"
+            className={styles.arrowIcon}
+            onClick={scrollPrev}
+          />
+          <div className={styles.embla__viewport} ref={emblaRef}>
+            <div className={styles.embla__container}>
+              {shopList.map((ite: any, ind: number) => {
+                return (
+                  <div key={ind} className={styles.item}>
+                    <div
+                      className={styles.img}
+                      onClick={() => {
+                        navigate(`/shopProfile#${String(ite.id)}`);
+                      }}
+                    >
+                      <img src={ite.imgs?.[7]} alt="" />
+                    </div>
+                    <div
+                      className={styles.name}
+                      onClick={() => {
+                        navigate(`/shopProfile#${String(ite.id)}`);
+                      }}
+                    >
+                      {ite.name}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <img
+            src={nextIcon}
+            alt="next"
+            className={styles.nextIcon}
+            onClick={scrollNext}
+          />
         </div>
       </div>
     </section>

@@ -54,11 +54,80 @@ import shop5img6 from "@/assets/img/shopProfile/shop5/img6.jpg";
 import shop5img7 from "@/assets/img/shopProfile/shop5/img7.jpg";
 import shop5img8 from "@/assets/img/shopProfile/shop5/img8.jpg";
 
+import shop6img1 from "@/assets/img/shopProfile/shop6/img1.jpg";
+import shop6img2 from "@/assets/img/shopProfile/shop6/img2.jpg";
+import shop6img3 from "@/assets/img/shopProfile/shop6/img3.jpg";
+import shop6img4 from "@/assets/img/shopProfile/shop6/img4.jpg";
+import shop6img5 from "@/assets/img/shopProfile/shop6/img5.jpg";
+import shop6img6 from "@/assets/img/shopProfile/shop6/img6.jpg";
+import shop6img7 from "@/assets/img/shopProfile/shop6/img7.jpg";
+import shop6img8 from "@/assets/img/shopProfile/shop6/img8.jpg";
+
+import shop7img1 from "@/assets/img/shopProfile/shop7/img1.jpg";
+import shop7img2 from "@/assets/img/shopProfile/shop7/img2.jpg";
+import shop7img3 from "@/assets/img/shopProfile/shop7/img3.jpg";
+import shop7img4 from "@/assets/img/shopProfile/shop7/img4.jpg";
+import shop7img5 from "@/assets/img/shopProfile/shop7/img5.jpg";
+import shop7img6 from "@/assets/img/shopProfile/shop7/img6.jpg";
+import shop7img7 from "@/assets/img/shopProfile/shop7/img7.jpg";
+import shop7img8 from "@/assets/img/shopProfile/shop7/img8.jpg";
+
+import shop8img1 from "@/assets/img/shopProfile/shop8/img1.jpg";
+import shop8img2 from "@/assets/img/shopProfile/shop8/img2.jpg";
+import shop8img3 from "@/assets/img/shopProfile/shop8/img3.jpg";
+import shop8img4 from "@/assets/img/shopProfile/shop8/img4.jpg";
+import shop8img5 from "@/assets/img/shopProfile/shop8/img5.jpg";
+import shop8img6 from "@/assets/img/shopProfile/shop8/img6.jpg";
+import shop8img7 from "@/assets/img/shopProfile/shop8/img7.jpg";
+import shop8img8 from "@/assets/img/shopProfile/shop8/img8.jpg";
+
+import shop9img1 from "@/assets/img/shopProfile/shop9/img1.jpg";
+import shop9img2 from "@/assets/img/shopProfile/shop9/img2.jpg";
+import shop9img3 from "@/assets/img/shopProfile/shop9/img3.jpg";
+import shop9img4 from "@/assets/img/shopProfile/shop9/img4.jpg";
+import shop9img5 from "@/assets/img/shopProfile/shop9/img5.jpg";
+import shop9img6 from "@/assets/img/shopProfile/shop9/img6.jpg";
+import shop9img7 from "@/assets/img/shopProfile/shop9/img7.jpg";
+import shop9img8 from "@/assets/img/shopProfile/shop9/img8.jpg";
+
+import shop10img1 from "@/assets/img/shopProfile/shop10/img1.jpg";
+import shop10img2 from "@/assets/img/shopProfile/shop10/img2.jpg";
+import shop10img3 from "@/assets/img/shopProfile/shop10/img3.jpg";
+import shop10img4 from "@/assets/img/shopProfile/shop10/img4.jpg";
+import shop10img5 from "@/assets/img/shopProfile/shop10/img5.jpg";
+import shop10img6 from "@/assets/img/shopProfile/shop10/img6.jpg";
+import shop10img7 from "@/assets/img/shopProfile/shop10/img7.jpg";
+import shop10img8 from "@/assets/img/shopProfile/shop10/img8.jpg";
+
+import shop11img1 from "@/assets/img/shopProfile/shop11/img1.jpg";
+import shop11img2 from "@/assets/img/shopProfile/shop11/img2.jpg";
+import shop11img3 from "@/assets/img/shopProfile/shop11/img3.jpg";
+import shop11img7 from "@/assets/img/shopProfile/shop11/img7.jpg";
+import shop11img8 from "@/assets/img/shopProfile/shop11/img8.jpg";
+
+import shop12img1 from "@/assets/img/shopProfile/shop12/img1.jpg";
+import shop12img2 from "@/assets/img/shopProfile/shop12/img2.jpg";
+import shop12img3 from "@/assets/img/shopProfile/shop12/img3.jpg";
+import shop12img4 from "@/assets/img/shopProfile/shop12/img4.jpg";
+import shop12img5 from "@/assets/img/shopProfile/shop12/img5.jpg";
+import shop12img6 from "@/assets/img/shopProfile/shop12/img6.jpg";
+import shop12img7 from "@/assets/img/shopProfile/shop12/img7.jpg";
+import shop12img8 from "@/assets/img/shopProfile/shop12/img8.jpg";
+
+import shop13img1 from "@/assets/img/shopProfile/shop13/img1.jpg";
+import shop13img2 from "@/assets/img/shopProfile/shop13/img2.jpg";
+import shop13img3 from "@/assets/img/shopProfile/shop13/img3.jpg";
+import shop13img4 from "@/assets/img/shopProfile/shop13/img4.jpg";
+import shop13img5 from "@/assets/img/shopProfile/shop13/img5.jpg";
+import shop13img6 from "@/assets/img/shopProfile/shop13/img6.jpg";
+import shop13img7 from "@/assets/img/shopProfile/shop13/img7.jpg";
+import shop13img8 from "@/assets/img/shopProfile/shop13/img8.jpg";
+
 export interface ShopItem {
   id: number;
   name: string;
   time?: string;
-  address?: string;
+  address?: string | string[];
   tel?: string;
   des?: string;
   desPro: string;
@@ -73,7 +142,7 @@ export const shopList: ShopItem[] = [
     id: 1,
     name: "品川バードマン",
     time: "(2020年11月6日開店)",
-    address: "東京都港区港南2-3-28 第三協和ビル 1階",
+    address: ["東京都港区港南2-3-28", "第三協和ビル 1階"],
     tel: "03-6712-9969",
     des: "フレッシュさにこだわった鶏を使用する焼き鳥居酒屋です。希少部位あり！",
     desPro:
@@ -95,7 +164,7 @@ export const shopList: ShopItem[] = [
     id: 2,
     name: "SHE WOLF DINER 渋谷店",
     time: "(2021年3月5日開店)",
-    address: "東京都渋谷区宇田川町3ｰ1 渋谷東武ホテル1階",
+    address: ["東京都渋谷区宇田川町3ｰ1", "渋谷東武ホテル1階"],
     tel: "03-6416-3363",
     des: "本場ハンバーガーやクラフトビールが楽しめるアメリカンダイナー。",
     desPro:
@@ -117,7 +186,7 @@ export const shopList: ShopItem[] = [
     id: 3,
     name: "撒椒小酒館 大久保店",
     time: "(2022年2月14日開店)",
-    address: "東京都新宿区百人町1-18-8 大久保カドビル1F",
+    address: ["東京都新宿区百人町1-18-8", "大久保カドビル 1F"],
     tel: "03-6908-9164",
     des: "充実したランチ＆ディナーメニューの本格四川中華料理",
     desPro:
@@ -139,7 +208,7 @@ export const shopList: ShopItem[] = [
     id: 4,
     name: "座 撒椒 渋谷東武ホテル店",
     time: "(2023年4月1日開店)",
-    address: "東京都渋谷区宇田川町3-1 渋谷東武ホテル地下1階",
+    address: ["東京都渋谷区宇田川町3-1", "渋谷東武ホテル B1F"],
     tel: "03-6452-5995",
     des: "【マジ中華の世界】特集で紹介された人気店芸能人やyoutuber&TikToker多数来店!渋谷駅近!名物石鍋麻婆豆腐など本場の味を楽しめる中華料理専門居酒屋です。",
     desPro: `魚の甘辛酢焼き魚や熱々石焼麻婆豆腐、やみつきよだれ鶏や自家製・小籠包の定番料理から仕切り鍋や北京ダックなど本格中華料理をお楽しみいただける多数のコースをご用意。明るい店内はインスタ映えするのはもちろん、お食事とともに空間もお楽しみいただけます。`,
@@ -161,7 +230,7 @@ export const shopList: ShopItem[] = [
     id: 5,
     name: "黔荘 貴州牛羊粉",
     time: "(2023年12月25日開店)",
-    address: "東京都新宿区百人町1-18-9大久保センタービル101室",
+    address: ["東京都新宿区百人町1-18-9", "大久保センタービル1F"],
     tel: "03-6279-3758",
     des: "米粉（米で作った面です）中国貴州の有名な軽食です。",
     desPro: `当店では四川料理人直伝・中国貴州地方の伝統料理をカジュアルにお楽しみいただけます。一押しの麺料理は、牛骨と多彩な漢方薬を使った濃厚なスープが魅力の「牛肉粉」や、羊肉の旨味を存分に引き出したスープが味わえる「羊肉粉」。日本ではなかなかお目にかかれない本場さながらの味を心ゆくまでご堪能ください◎店内はモダンでスタイリッシュな雰囲気を演出。おひとり様やご家族連れ・お集まりなど様々なシーンに対応可能です。`,
@@ -182,103 +251,169 @@ export const shopList: ShopItem[] = [
     id: 6,
     name: "酔狂割烹 伊達",
     time: "(2023年8月17日開店)",
-    address: "東京都中央区日本橋2-2-15 森井ビル 1F",
-    tel: "050-5600-8538",
-    des: "「酔狂料理」と「痛風料理」を楽しめる割烹。",
+    address: ["東京都中央区日本橋2-2-15", "森井ビル 1F"],
+    tel: "03-6281-8360",
+    des: "「全国各地から厳選した日本酒や本格焼酎と共にお楽しみくださいませ。",
     desPro: `ゆったりした空間でしっぽり味わう旨い酒と美味い飯『名物 かつおのレアカツ』サクサクの衣と中身はカツオはレアに♪落ち着いた大人の空間でゆったり楽しむ割烹料理。`,
     mapAddr: ["東京都中央区日本橋2-2-15", "森井ビル 1F"],
     mapBus: ["地下鉄東西線 日本橋駅 徒歩2分", "日本橋駅から186m"],
-    imgs: [img, img, img, img, img, img, img],
+    imgs: [
+      shop6img1,
+      shop6img2,
+      shop6img3,
+      shop6img4,
+      shop6img5,
+      shop6img6,
+      shop6img7,
+      shop6img8,
+    ],
   },
   {
     id: 7,
     name: "天府火鍋巷子",
-    time: "(2024年1月20日開店)",
-    address: "東京都新宿区新宿3-22-7指田ビルB1~B2",
-    tel: "03-6380-61",
+    time: "(2024年1月25日開店)",
+    address: ["東京都新宿区新宿3-22-7", "指田ビルB1F~B2F"],
+    tel: "03-6380-6112",
     des: "本場重慶の味が楽しめる火鍋専門店。",
     desPro: `階段を降りると現れるのは、地下3フロア(全190席)の巨大空間！カラフルなネオン輝くレトロチャイナな店内で、本場の味を追求した「火鍋」を提供しています。中国から取り寄せた牛脂を使用し、試行錯誤の末に完成したスープは絶品。ノン冷凍で新鮮なお肉は、定番のラム肉から珍しい具材までご用意しました。手作りのサイドメニューも豊富で、女性に人気のタピオカやアルコールも多彩◎写真映えする空間で至福の時間をどうぞ♪`,
-    mapAddr: ["東京都新宿区新宿3-22-7", "指田ビルB1F・B2F"],
+    mapAddr: ["東京都新宿区新宿3-22-7", "指田ビルB1F~B2F"],
     mapBus: ["新宿駅から徒歩3分", "新宿西口駅から215m"],
-    imgs: [img, img, img, img, img, img, img],
+    imgs: [
+      shop7img1,
+      shop7img2,
+      shop7img3,
+      shop7img4,
+      shop7img5,
+      shop7img6,
+      shop7img7,
+      shop7img8,
+    ],
   },
   {
     id: 8,
     name: "THE SMASH SCRAMBLE",
     time: "(2025年2月14日開店)",
-    address: "東京都渋谷区宇田川町26-11 白馬ビル1F",
+    address: ["東京都渋谷区宇田川町26番11号", "白馬ビル1F"],
     tel: "03-6416-1169",
     des: "アメリカ料理",
     desPro: `アメリカンテイストのインテリアで統一。ポップでヴィンテージ感のある雰囲気なので、カフェ・飲食店シーン、アパレル、インタビューなどの様々なシチュエーションの撮影が可能です。個性的なアメリカンテイストの空間なので、広告、プロモーション、各種映像制作にもおすすめです。`,
-    mapAddr: ["東京都渋谷区宇田川町26番11号", "白馬ビル1階"],
-    mapBus: [
-      "東京メトロ,東急渋谷駅A3b出口より徒歩約1分",
-      "JR渋谷駅ハチ公口より徒歩約4分",
+    mapAddr: ["東京都渋谷区宇田川町26番11号", "白馬ビル1F"],
+    mapBus: ["東急渋谷駅A3b出口より徒歩約1分", "JR渋谷駅ハチ公口より徒歩約4分"],
+    imgs: [
+      shop8img1,
+      shop8img2,
+      shop8img3,
+      shop8img4,
+      shop8img5,
+      shop8img6,
+      shop8img7,
+      shop8img8,
     ],
-    imgs: [img, img, img, img, img, img, img],
   },
   {
     id: 9,
     name: "スターカラオケ",
     time: "(2025年6月29日開店)",
-    address: "東京都渋谷区宇田川町26-11 白馬ビル2F~5F",
+    address: ["東京都渋谷区宇田川町26番11号", "白馬ビル2F~5F"],
     tel: "03-6277-5349",
     des: "【世界1000店舗のカラオケ、渋谷に上陸!渋谷のセンター街に位置する便利な立地で、深夜まで営業しているため、遅くまでゆっくりとお楽しみいただけます】",
     desPro: `【5階はフロア完全貸切の≪VIPルーム≫をご用意しております☆】専用スタッフが5階に常駐し、専用トイレも完備。最新のDAM機器を導入し、なんとマイクは4本同時に使用可能!完全なプライベート空間で、リッチなカラオケ体験をお楽しみいただけます♪人数や料金など、お気軽にお店までお問い合わせください。【渋谷のセンター街！宴会・歓送迎会・女子会・パーティーにぴったり◎】団体利用にぴったりの当店では、様々なシーンでご利用いただけます！`,
-    mapAddr: ["東京都渋谷区宇田川町26番11号", "白馬ビル2階"],
-    mapBus: [
-      "東京メトロ,東急渋谷駅A3b出口より徒歩約1分",
-      "JR渋谷駅ハチ公口より徒歩約4分",
+    mapAddr: ["東京都渋谷区宇田川町26番11号", "白馬ビル2F~5F"],
+    mapBus: ["東急渋谷駅A3b出口より徒歩約1分", "JR渋谷駅ハチ公口より徒歩約4分"],
+    imgs: [
+      shop9img1,
+      shop9img2,
+      shop9img3,
+      shop9img4,
+      shop9img5,
+      shop9img6,
+      shop9img7,
+      shop9img8,
     ],
-    imgs: [img, img, img, img, img, img, img],
   },
   {
     id: 10,
-    name: "楊国府麻辣湯 神保町店",
-    time: "(2025年8月1日開店予定)",
-    address: "東京都千代田区神田神保町2-14-11 朝日神保町プラザ102",
+    name: "楊國福マーラータン 神保町駅前店",
+    time: "(2025年8月2日開店)",
+    address: ["東京都千代田区神田神保町2-14-11", "朝日神保町プラザ 1F"],
     tel: "03-6261-9776",
     des: "マーラータン（スープ春雨）具材をチョイスして自分好みのマーラータンが楽しめる。",
     desPro: `世界に広がる、健康と美味しさの架け橋。本格的な味わいを提供し、幅広い顧客層に対応します。本格的な麻辣湯の魅力を日本全国に広める楊国福麻辣湯は、中国本土を基盤とし、世界中に7000軒以上のチェーン店を展開するグローバルファストフードリーダーです。楊国福グループは2003年に設立され、「健康、匠心、美しさ」をコア価値観とし、飲食サービスと小売運営を行っています。`,
-    mapAddr: ["東京都千代田区神田神保町2-14-11", "朝日神保町プラザ102"],
+    mapAddr: ["東京都千代田区神田神保町2-14-11", "朝日神保町プラザ 1F"],
     mapBus: ["神保町駅より徒歩約2分", ""],
-    imgs: [img, img, img, img, img, img, img],
+    imgs: [
+      shop10img1,
+      shop10img2,
+      shop10img3,
+      shop10img4,
+      shop10img5,
+      shop10img6,
+      shop10img7,
+      shop10img8,
+    ],
   },
   {
     id: 11,
-    name: "楊国府麻辣湯 池袋西口店",
-    time: "(2025年8月9日開店予定)",
-    address: "東京都豊島区西池袋1-15-8 三仲ビル1F",
+    name: "楊國福マーラータン 池袋西口駅前店",
+    time: "(2025年8月2日開店)",
+    address: ["東京都豊島区西池袋1-15-8", "三仲ビル1F"],
     tel: "03-6691-0387",
     des: "マーラータン（スープ春雨）具材をチョイスして自分好みのマーラータンが楽しめる。",
     desPro: `世界に広がる、健康と美味しさの架け橋。本格的な味わいを提供し、幅広い顧客層に対応します。本格的な麻辣湯の魅力を日本全国に広める楊国福麻辣湯は、中国本土を基盤とし、世界中に7000軒以上のチェーン店を展開するグローバルファストフードリーダーです。楊国福グループは2003年に設立され、「健康、匠心、美しさ」をコア価値観とし、飲食サービスと小売運営を行っています。`,
     mapAddr: ["東京都豊島区西池袋1-15-8", "三仲ビル1F"],
     mapBus: ["池袋駅より徒歩約1分", ""],
-    imgs: [img, img, img, img, img, img, img],
+    imgs: [
+      shop11img1,
+      shop11img2,
+      shop11img3,
+      shop10img4,
+      shop10img5,
+      shop10img6,
+      shop11img7,
+      shop11img8,
+    ],
   },
   {
     id: 12,
     name: "炉ノ鳥 銀座店",
     time: "(2025年8月25日開店予定)",
-    address: "東京都中央区銀座一丁目6番15号銀座岡田ビル1階",
+    address: ["東京都中央区銀座一丁目", "6番15号銀座岡田ビル1F"],
     tel: "03-6263-0988",
     des: "炭火で焼き上げた、一本入魂の焼き鳥",
-    desPro: ``,
-    mapAddr: ["", ""],
-    mapBus: ["", ""],
-    imgs: [img, img, img, img, img, img, img],
+    desPro: `2025年8月25日開店予定で、イメージ写真をご覧ください。`,
+    mapAddr: ["東京都中央区銀座一丁目", "6番15号銀座岡田ビル1F"],
+    mapBus: ["有楽町駅から1分", "銀座駅から4分"],
+    imgs: [
+      shop12img1,
+      shop12img2,
+      shop12img3,
+      shop12img4,
+      shop12img5,
+      shop12img6,
+      shop12img7,
+      shop12img8,
+    ],
   },
   {
     id: 13,
     name: "銀座七號",
     time: "(9月1号開店予定)",
-    address: "東京都中央区銀座7-17-18",
-    tel: "",
-    des: "",
-    desPro: ``,
-    mapAddr: ["", ""],
-    mapBus: ["", ""],
-    imgs: [img, img, img, img, img, img, img],
+    address: ["東京都中央区銀座7-17-18", ""],
+    tel: "03-6278-8839",
+    des: "高級中華料理会員制",
+    desPro: `2025年9月1日開店予定で、イメージ写真をご覧ください。`,
+    mapAddr: ["東京都中央区銀座7-17-18", ""],
+    mapBus: ["新橋駅から5分", ""],
+    imgs: [
+      shop13img1,
+      shop13img2,
+      shop13img3,
+      shop13img4,
+      shop13img5,
+      shop13img6,
+      shop13img7,
+      shop13img8,
+    ],
   },
 ];
 
@@ -327,13 +462,30 @@ const ShopProfile: React.FC = () => {
                   <div className={styles.time}>{item?.time}</div>
                   {/* 所在地 */}
                   <div className={cs(styles.address, styles.text)}>
-                    所在地：{item?.address}
-                    <span className={styles.tel}>Tel: {item?.tel}</span>
+                    <span className={styles.addr}>
+                      <span className={styles.addr1}>
+                        所在地：{item?.address?.[0]}
+                      </span>
+                      {item?.address?.[1] && (
+                        <span className={styles.addr2}>
+                          <span className={styles.opcity}>所在地：</span>
+                          {item?.address?.[1]}
+                        </span>
+                      )}
+                    </span>
+                    {item?.tel && (
+                      <span className={styles.tel}>
+                        <span className={styles.opcity}>所在地：</span>Tel:{" "}
+                        {item?.tel}
+                      </span>
+                    )}
                   </div>
                   {/* 描述 */}
-                  <div className={cs(styles.address, styles.text)}>
-                    ◇{item?.des}
-                  </div>
+                  {item?.des && (
+                    <div className={cs(styles.address, styles.text)}>
+                      ◇{item?.des}
+                    </div>
+                  )}
                 </div>
                 {/* 图片1 */}
                 <div className={styles.img1}>
