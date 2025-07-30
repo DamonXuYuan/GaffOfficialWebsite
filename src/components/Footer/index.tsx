@@ -16,9 +16,6 @@ const Footer: React.FC = () => {
         </div>
         <div className={styles.lists}>
           <div className={styles.listItem}>
-            <div className={cs(styles.title, styles.opcity)}>
-              ショートカット
-            </div>
             <div
               className={cs(styles.item, styles.noMr)}
               onClick={() => navigate("/")}

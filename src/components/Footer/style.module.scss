@@ -46,6 +46,11 @@
             color: #800309;
           }
         }
+        .noMr {
+          font-weight: 900;
+          font-size: 20px;
+          line-height: 30px;
+        }
       }
       .opcity {
         opacity: 0;
@@ -83,6 +88,10 @@
             font-size: 14px;
             line-height: 16px;
             margin: 10px auto;
+          }
+          .noMr {
+            font-size: 16px;
+            line-height: 18px;
           }
           &:last-child {
             .item {
