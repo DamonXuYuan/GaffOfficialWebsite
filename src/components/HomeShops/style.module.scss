@@ -235,7 +235,7 @@
       //   direction: rtl; // 核心：让容器从右到左
       // }
       .embla__slide {
-        flex: 0 0 20%; /* 一行显示4张，可调整 */
+        flex: 0 0 250px; /* 一行显示4张，可调整 */
         min-width: 0;
         padding: 0 10px; /* 图片间距 */
         box-sizing: border-box;
