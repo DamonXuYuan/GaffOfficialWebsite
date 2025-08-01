@@ -355,7 +355,7 @@ export const shopList: ShopItem[] = [
   {
     id: 11,
     name: "楊國福マーラータン 池袋西口駅前店",
-    time: "(2025年8月2日開店)",
+    time: "(2025年8月5日開店)",
     address: ["東京都豊島区西池袋1-15-8", "三仲ビル1F"],
     tel: "03-6691-0387",
     des: "マーラータン（スープ春雨）具材をチョイスして自分好みのマーラータンが楽しめる。",
@@ -432,6 +432,7 @@ const ShopProfile: React.FC = () => {
       }
     }
   }, [location]); // 依赖 location，监听 hash 变化
+
   return (
     <section className={styles.shopProfile}>
       <div className={styles.banner} />

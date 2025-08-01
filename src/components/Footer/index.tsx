@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className={styles.listItem}>
-            <div className={styles.title}>店舗</div>
+            <div className={styles.title}>店舗一覧</div>
             {shopList.map((item, index) => {
               return (
                 index < shopList.length / 2 && (

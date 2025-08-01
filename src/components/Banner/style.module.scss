@@ -28,7 +28,7 @@
           //   z-index: -1;
           // }
           background-repeat: no-repeat;
-          background-size: 100% 100%;
+          background-size: contain 100%;
           background-position: center 0;
           &:nth-child(1) {
             background-image: url("../../assets/img/banner/banner1.jpg");
@@ -118,18 +118,18 @@
         font-size: 12px;
       }
     }
-    .embla {
-      .embla__viewport {
-        .embla__container {
-          .embla__slide {
-            background-size: auto 100%;
-            &:nth-child(2) {
-              background-position: 30% center;
-            }
-          }
-        }
-      }
-    }
+    // .embla {
+    //   .embla__viewport {
+    //     .embla__container {
+    //       .embla__slide {
+    //         background-size: auto 100%;
+    //         &:nth-child(2) {
+    //           background-position: 30% center;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
     .embla__dots {
       bottom: 50px;
       .embla__dot {
